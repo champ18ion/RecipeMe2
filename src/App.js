@@ -78,7 +78,6 @@ import Homepage from './Homepage';
 import Favorites from './Favorites';
 import RecipeDetail from './RecipeDetail';
 import './style.css'
-import { MDBContainer } from 'mdb-react-ui-kit';
 
 function App() {
   const [currentView, setCurrentView] = useState('homepage');
@@ -97,12 +96,12 @@ function App() {
   };
 
   return (
-    <MDBContainer fluid className="App ">
+    <div className="App">
       <Header handleSwitch={handleSwitch} />
       {currentView === 'homepage' && <Homepage openRecipeDetail={openRecipeDetail} />}
       {currentView === 'favorites' && <Favorites />}
       {selectedRecipe && <RecipeDetail recipe={selectedRecipe} onClose={closeRecipeDetail} />}
-    </MDBContainer>
+    </div>
   );
 }
 
