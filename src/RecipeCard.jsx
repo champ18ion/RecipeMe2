@@ -54,7 +54,7 @@ export default function RecipeCard({
         rippleTag="div"
         className="bg-image hover-overlay"
       >
-        <MDBCardImage src={recipe.recipe.image} fluid alt="..."  />
+        <MDBCardImage src={recipe.recipe.image} fluid alt="..." width={400} />
         <a>
           <div
             className="mask"
@@ -99,7 +99,7 @@ export default function RecipeCard({
             </MDBModalHeader>
             <MDBModalBody>
               <MDBRow>
-                <MDBCol md="12" lg={6}>
+                <MDBCol md="12" lg={6} >
                   <p>
                     <a
                       href={recipe.recipe.url}
@@ -113,7 +113,7 @@ export default function RecipeCard({
                     src={recipe.recipe.image}
                     alt={recipe.recipe.label}
                     fluid
-                    style={{ borderRadius: "10px" , justifyContent:'center'}}
+                    style={{ borderRadius: "10px" }}
                   />
                   <MDBTypography variant="h5" className="m-2">
                     {" "}
