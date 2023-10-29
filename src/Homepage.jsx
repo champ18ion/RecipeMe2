@@ -26,7 +26,7 @@ function Homepage({ openRecipeDetail }) {
             value={searchInput}
             onChange={handleSearchChange}
             className="text-center"
-            style={{ width: '60vw', borderRadius: '50%' }} // Adjusted styles
+            style={{ width: '50vw', borderRadius: '50%' }} // Adjusted styles
           />
         </MDBCol>
       </MDBRow>

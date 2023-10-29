@@ -27,14 +27,12 @@ export default function RecipeCard({
   openRecipeDetail,
   isFavoritePage,
 }) {
-  const isFavorite = isFavoritePage ? true : false; // Check if it's on the Favorites page
+  const isFavorite = isFavoritePage ? true : false;
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleFavoriteClick = () => {
     if (isFavorite) {
-      // Remove from favorites if on the Favorites page
-      // You need to implement the removeFromFavorites function in your RecipeContext
       removeFromFavorites(recipe);
     } else {
       addToFavorites(recipe);
@@ -50,13 +48,13 @@ export default function RecipeCard({
   };
 
   return (
-    <MDBCard className="m-4">
+    <MDBCard className="m-4 flex-column">
       <MDBRipple
         rippleColor="light"
         rippleTag="div"
         className="bg-image hover-overlay"
       >
-        <MDBCardImage src={recipe.recipe.image} fluid alt="..." width={400} />
+        <MDBCardImage src={recipe.recipe.image} fluid alt="..."  />
         <a>
           <div
             className="mask"
@@ -74,7 +72,7 @@ export default function RecipeCard({
           </MDBBadge>{" "}
           &nbsp;
           <MDBBadge pill className="mx-2" color="info" light>
-            Time:{recipe.recipe.totalTime} min
+            Time: {recipe.recipe.totalTime} min
           </MDBBadge>
         </MDBCardText>
         <MDBRow>
@@ -101,7 +99,7 @@ export default function RecipeCard({
             </MDBModalHeader>
             <MDBModalBody>
               <MDBRow>
-                <MDBCol size="12" md="6">
+                <MDBCol md="12" lg={6}>
                   <p>
                     <a
                       href={recipe.recipe.url}
@@ -115,7 +113,7 @@ export default function RecipeCard({
                     src={recipe.recipe.image}
                     alt={recipe.recipe.label}
                     fluid
-                    style={{ borderRadius: "10px" }}
+                    style={{ borderRadius: "10px" , justifyContent:'center'}}
                   />
                   <MDBTypography variant="h5" className="m-2">
                     {" "}
@@ -149,13 +147,14 @@ export default function RecipeCard({
                     </p>
                   </MDBCol>
                 </MDBCol>
-                <MDBCol size="12" md="6">
+                <MDBCol sm="12" lg="6">
                   <p
                     className="mt-3"
                     style={{
                       fontSize: "24px",
                       fontWeight: "bold",
                       color: "#333",
+                      justifyItems:'center'
                     }}
                   >
                     Nutritional Details:
