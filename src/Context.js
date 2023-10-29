@@ -16,7 +16,7 @@ const RecipeProvider = ({ children }) => {
     // Set debouncedSearchText after a delay (e.g., 300 milliseconds)
     setTimeout(() => {
       setDebouncedSearchText(text);
-    },2000);
+    },300);
   };
 
   // Use debouncedSearchText for API requests
@@ -48,7 +48,7 @@ const RecipeProvider = ({ children }) => {
   };
 
   const removeFromFavorites = (recipe) => {
-    const updatedFavorites = favorites.filter((meal) => meal.id !== recipe.id);
+    const updatedFavorites = favorites.filter((meal) => meal.recipe.uri !== recipe.recipe.uri);
     setFavorites(updatedFavorites);
     localStorage.setItem('favorites', JSON.stringify(updatedFavorites));
   };

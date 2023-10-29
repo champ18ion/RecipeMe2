@@ -2,15 +2,20 @@
   box-sizing: border-box;
 }
 
+
 body {
   margin: 0;
-  padding: 1rem;
-  font-family: system-ui, sans-serif;
+  padding: 5px;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
   color: black;
-  background-color: white;
+  background-color: #fff;
 }
 
 h1 {
   font-weight: 800;
   font-size: 1.5rem;
+}
+
+.mdb-input:focus {
+  border-color: #0056b3; /* Highlight the border on focus */
 }
